@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Snippets
+   ========================================================================== */
+
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+  background-color: @start;
+  background-image: -webkit-linear-gradient(@origin, @start, @stop);
+  background-image: -moz-linear-gradient(@origin, @start, @stop);
+  background-image: -o-linear-gradient(@origin, @start, @stop);
+  background-image: -ms-linear-gradient(@origin, @start, @stop);
+  background-image: linear-gradient(@origin, @start, @stop);
+}
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+  -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+  -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+  border-radius: @topleft @topright @bottomright @bottomleft;
+}
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow-inset (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+  -webkit-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+}
+.transition (@prop: all, @time: 1s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+.transition-delay(@time: 1s) {
+  transition-delay: @time;
+  -moz-transition-delay: @time;
+  -webkit-transition-delay: @time;
+  -o-transition-delay: @time;
+}
+.rotation(@deg:5deg){
+  -o-transform: rotate(@deg);
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  transform: rotate(@deg);
+}

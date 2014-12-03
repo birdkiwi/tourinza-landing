@@ -1,0 +1,116 @@
+@ui-btn-red-bg-normal: #ff4f4f;
+@ui-btn-red-color-normal: #ffffff;
+
+.ui-btn-base(@width, @height, @font-size, @padding:0)
+{
+  display: inline-block;
+  vertical-align: top;
+  .no-select;
+  .no-ios;
+  text-decoration: none;
+  outline: none;
+  width: @width;
+  height: @height;
+  line-height: @height;
+  text-align: center;
+  font-size: @font-size;
+  .ff-arial;
+  cursor: pointer;
+  .border-radius(5px);
+  padding-left: @padding;
+  padding-right: @padding;
+}
+
+.ui-btn-red(@width, @height, @font-size, @padding:0)
+{
+  .ui-btn-base(@width, @height, @font-size, @padding);
+  background: @ui-btn-red-bg-normal;
+  color: @ui-btn-red-color-normal;
+  .transition(background,.15s,linear);
+  &:hover
+  {
+    background: lighten(@ui-btn-red-bg-normal, 6%);
+  }
+}
+
+.ui-input-text(@width, @height)
+{
+  width: @width - 40px - 2px;
+  height: @height - 2px;
+  padding: 0 20px;
+  border: 1px solid #353a47;
+  background: #ffffff;
+  .ff-arial;
+  color: #777777;
+  font-size: 14px;
+  line-height: @height;
+  margin: 0;
+  outline: none;
+  .border-radius(5px);
+  &.error
+  {
+    border-color: #af4343;
+  }
+}
+
+.ui-textarea(@width, @height)
+{
+  width: @width - 40px - 2px;
+  height: @height - 26px - 2px;
+  border: 1px solid #353a47;
+  background: #ffffff;
+  .ff-arial;
+  color: #777777;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 13px 20px;
+  margin: 0;
+  outline: none;
+  .border-radius(5px);
+  resize: none;
+  &.error
+  {
+    border-color: #af4343;
+  }
+}
+
+.ui-form-input-text(@width, @height)
+{
+  width: @width - 20px - 2px;
+  height: @height - 2px;
+  padding: 0 10px;
+  border: 1px solid #d1d3da;
+  background: #ffffff;
+  .ff-arial;
+  color: #777777;
+  font-size: 14px;
+  line-height: @height;
+  margin: 0;
+  outline: none;
+  .border-radius(2px);
+  &.error
+  {
+    border-color: #af4343;
+  }
+}
+
+.ui-form-textarea(@width, @height)
+{
+  width: @width - 20px - 2px;
+  height: @height - 16px - 2px;
+  border: 1px solid #d1d3da;
+  background: #ffffff;
+  .ff-arial;
+  color: #777777;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 8px 10px;
+  margin: 0;
+  outline: none;
+  .border-radius(2px);
+  resize: none;
+  &.error
+  {
+    border-color: #af4343;
+  }
+}

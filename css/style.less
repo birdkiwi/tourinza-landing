@@ -1,0 +1,138 @@
+@import "ui-normalize.css";
+@import "ui-snippets";
+@import "ui-grid";
+@import "ui-type";
+@import "ui-sprites";
+@import "ui-interface";
+@import "animate";
+
+@import "b-header";
+@import "b-footer";
+@import "b-services";
+@import "b-os";
+@import "b-main";
+@import "b-menu";
+@import "b-login";
+
+@import "p-reg";
+
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+.group
+{
+  &:after
+  {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+.no-select
+{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.no-ios
+{
+  -webkit-appearance: none;
+}
+
+.border-box
+{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+html, body
+{
+  height: 100%;
+}
+
+.btn {
+  &-medium {
+    .ui-btn-red(auto,40px,14px,20px);
+  }
+}
+
+.b-page
+{
+  width: 100%;
+  min-width: 1000px;
+  z-index: 100;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  .border-box;
+  padding-bottom: 180px;
+  margin-bottom: -180px;
+}
+
+.p-index,
+.p-reg,
+.p-login
+{
+  background: url(../img/single/index-cover.png) no-repeat 0 0;
+  background-size: cover;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.p-index
+{
+  background: url(../img/single/homepage-cover.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+
+.btn-up
+{
+  background: url(../img/single/btn-up.png) no-repeat 0 0;
+  width: 50px;
+  height: 50px;
+  right: -60px;
+  bottom: 10px;
+  position: fixed;
+  .opacity(0.6);
+  .transition(all,0.15s,linear);
+  display: block;
+  cursor: pointer;
+  z-index: 8888;
+  &:after
+  {
+    content: "Наверх";
+    position: absolute;
+    right: 60px;
+    top: 0;
+    .ff-roboto-reg;
+    font-size: 14px;
+    line-height: 50px;
+    margin: 0 0 0 8px;
+    overflow: hidden;
+    width: 0;
+    .transition(width, 0.15s, linear);
+  }
+  &.active
+  {
+    right: 10px;
+  }
+  &:hover
+  {
+    .opacity(1);
+    &:after
+    {
+      width: 100%;
+    }
+  }
+}

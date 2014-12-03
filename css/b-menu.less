@@ -1,0 +1,151 @@
+.b-menu
+{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+
+  &__wrapper-1
+  {
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+  }
+
+  &__wrapper-2
+  {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  &__close
+  {
+    display: block;
+    .sprite(@icon-close);
+    position: absolute;
+    z-index: 200;
+    top: 53px;
+    left: 53px;
+    cursor: pointer;
+    background: none;
+    &:before
+    {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      .sprite(@icon-close);
+      .opacity(1);
+      .transition(opacity,.15s,linear);
+    }
+    &:after
+    {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      .sprite(@icon-close-hover);
+      .opacity(0);
+      .transition(opacity,.15s,linear);
+    }
+    &:hover
+    {
+      &:before
+      {
+        .opacity(0);
+      }
+      &:after
+      {
+        .opacity(1);
+      }
+    }
+  }
+
+  h2
+  {
+    font-size: 40px;
+    line-height: 1;
+    margin: 0 0 19px 0;
+    .ff-roboto-reg;
+  }
+
+  .b-list
+  {
+    display: block;
+    list-style: none;
+    text-align: center;
+    color: #cccccc;
+    padding: 0;
+    margin: 0;
+    .ff-roboto-reg;
+    &__item
+    {
+      display: block;
+    }
+    &__link
+    {
+      text-decoration: none;
+      display: block;
+      color: #999999;
+      font-size: 20px;
+      line-height: 50px;
+      .transition(all,.3s,linear);
+      &:hover
+      {
+        background: #393939;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .b-list-inner
+  {
+    display: block;
+    list-style: none;
+    padding: 0 0 42px 0;
+    margin: 0;
+    position: relative;
+
+    &:after
+    {
+      content: "";
+      width: 180px;
+      height: 1px;
+      background: #999999;
+      position: absolute;
+      left: 50%;
+      bottom: 15px;
+      margin: 0 0 0 -180px/2;
+    }
+
+    &__item
+    {
+      display: block;
+    }
+
+    &__link
+    {
+      text-decoration: none;
+      display: block;
+      color: #999999;
+      font-size: 16px;
+      line-height: 40px;
+      .transition(all,.3s,linear);
+      &:hover
+      {
+        background: #393939;
+        color: #ffffff;
+      }
+
+    }
+  }
+
+}

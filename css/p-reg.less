@@ -1,0 +1,399 @@
+.p-reg
+{
+
+  .b-header__logo
+  {
+    margin-left: 0;
+    left: 41px;
+    z-index: 88;
+  }
+
+  .b-user-panel
+  {
+    right: 36px;
+    z-index: 88;
+  }
+
+  .b-header__reg-list
+  {
+    display: none;
+    top: 51px;
+  }
+
+  &.p-reg--step-1
+  {
+    .b-reg-start
+    {
+      display: block;
+    }
+  }
+
+  &.p-reg--step-2
+  {
+    .b-header__reg-list,
+    .b-reg-forms
+    {
+      display: block;
+    }
+  }
+
+}
+
+.b-reg-start
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -100px 0 0 -500px;
+  width: 1000px;
+  text-align: center;
+  color: #ffffff;
+  height: 200px;
+  z-index: 200;
+  display: none;
+
+  h2
+  {
+    .ff-roboto-light;
+    font-size: 30px;
+    line-height: 1;
+    margin: 0 0 15px 0;
+  }
+
+  p
+  {
+    margin: 0 0 20px 0;
+    .ff-roboto-reg;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+}
+
+.b-reg-list
+{
+  list-style: none;
+  padding: 101px 0 0 0;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  z-index: 50;
+  li
+  {
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    position: relative;
+    margin: 0 48px;
+  }
+  a
+  {
+    font-size: 19px;
+    line-height: 1;
+    .ff-roboto-reg;
+    color: #828cab;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    text-align: center;
+    cursor: pointer;
+    .transition(color,0.15s,linear);
+    .no-select;
+    &:hover
+    {
+      color: #ffffff;
+    }
+  }
+  .item-1
+  {
+    width: 130px;
+    margin: 0 0 0 -65px;
+    &:after
+    {
+      content: "";
+      .sprite(@icon-reg-1);
+      position: absolute;
+      left: 50%;
+      bottom: 55px;
+      margin-left: @icon-reg-1-width/(-2);
+    }
+    &:before
+    {
+      content: "";
+      width: 90px - 6px;
+      height: 90px - 6px;
+      border: 3px solid #21b2d5;
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      margin: 0 0 0 -45px;
+      .transition(background,0.15s,linear);
+      .border-radius(50%);
+    }
+    &:hover
+    {
+      &:before
+      {
+        background: #21b2d5;
+      }
+    }
+  }
+  .item-2
+  {
+    width: 100px;
+    margin: 0 0 0 -50px;
+    &:after
+    {
+      content: "";
+      .sprite(@icon-reg-2);
+      position: absolute;
+      left: 50%;
+      bottom: 51px;
+      margin-left: @icon-reg-2-width/(-2);
+    }
+    &:before
+    {
+      content: "";
+      width: 90px - 6px;
+      height: 90px - 6px;
+      border: 3px solid #ffa800;
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      margin: 0 0 0 -45px;
+      .transition(background,0.15s,linear);
+      .border-radius(50%);
+    }
+    &:hover
+    {
+      &:before
+      {
+        background: #ffa800;
+      }
+    }
+  }
+  .item-3
+  {
+    width: 160px;
+    margin: 0 0 0 -80px;
+    &:after
+    {
+      content: "";
+      .sprite(@icon-reg-3);
+      position: absolute;
+      left: 50%;
+      bottom: 51px;
+      margin-left: @icon-reg-3-width/(-2);
+    }
+    &:before
+    {
+      content: "";
+      width: 90px - 6px;
+      height: 90px - 6px;
+      border: 3px solid #98759d;
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      margin: 0 0 0 -45px;
+      .transition(background,0.15s,linear);
+      .border-radius(50%);
+    }
+    &:hover
+    {
+      &:before
+      {
+        background: #98759d;
+      }
+    }
+  }
+  .active
+  {
+    &:after
+    {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      margin: 48px 0 0 -20px;
+      border-bottom: 20px solid #f3f5f8;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;;
+    }
+    a
+    {
+      color: #ffffff;
+      cursor: default;
+    }
+    .item-1
+    {
+      &:before
+      {
+        background: #21b2d5;
+      }
+    }
+    .item-2
+    {
+      &:before
+      {
+        background: #ffa800;
+      }
+    }
+    .item-3
+    {
+      &:before
+      {
+        background: #98759d;
+      }
+    }
+  }
+}
+
+.b-reg-forms
+{
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  padding: 90px 0 20px 0;
+  display: none;
+}
+
+.b-reg-form
+{
+  background: #f3f5f8;
+  position: relative;
+  .border-radius(4px);
+  padding: 23px 12px 27px 12px;
+
+  .form
+  {
+    &__title
+    {
+      .ff-roboto-light;
+      font-size: 30px;
+      line-height: 1;
+      color: #3e444b;
+      margin: 0 0 17px 0;
+      text-align: center;
+    }
+    &__row
+    {
+      padding: 0 0 20px 0;
+    }
+    &__field,
+    &__col
+    {
+      display: inline-block;
+      padding: 0 18px;
+      vertical-align: top;
+      position: relative;
+    }
+    &__col
+    {
+      .form__field
+      {
+        display: block;
+        padding: 0;
+        margin-top: 10px;
+        &:first-child
+        {
+          margin-top: 0;
+        }
+      }
+    }
+    &__submit
+    {
+      text-align: center;
+      padding: 6px 0 0 0;
+      p
+      {
+        margin: 9px 0 0 0;
+        color: #959aa9;
+        font-size: 12px;
+        .ff-arial;
+      }
+    }
+    &__submit-btn
+    {
+      .ui-btn-red(260px,50px,20px);
+    }
+  }
+
+  label
+  {
+    display: block;
+    text-align: left;
+    .ff-arial;
+    font-size: 14px;
+    line-height: 30px;
+    color: #3e444b;
+    sup
+    {
+      color: #ed1d24;
+      font-size: 16px;
+      top: 0;
+    }
+  }
+
+  .captcha
+  {
+    border: 1px solid #d1d3da;
+    img
+    {
+      display: block;
+    }
+  }
+
+  input[type="text"]
+  {
+    .ui-form-input-text(270px, 40px);
+  }
+
+  textarea
+  {
+    .ui-form-textarea(580px,130px);
+  }
+
+  .form__error
+  {
+    width: 120px;
+    background: #ffffff;
+    position: absolute;
+    right: 38px;
+    bottom: 100%;
+    margin: 0 0 -10px 0;
+    color: #9ea6ae;
+    padding: 11px 0;
+    .ff-arial;
+    font-size: 12px;
+    line-height: 15px;
+    .border-radius(2px);
+    text-align: center;
+    .box-shadow(0,2px,5px,0.1);
+    &:before
+    {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      margin: 0 0 0 -10px;
+      .sprite(@error-angle);
+    }
+    &:after
+    {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      margin: 0 0 0 -10px;
+      border-top: 10px solid #ffffff;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+    }
+  }
+
+}

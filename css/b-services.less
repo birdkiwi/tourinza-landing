@@ -1,0 +1,516 @@
+@b-services-title-color: #ffffff;
+@b-services-text-normal-color: #c7cbd8;
+@b-services-text-hover-color: #ffffff;
+
+.b-services
+{
+  color: @b-services-text-normal-color;
+  .i-container;
+
+  &.state-1
+  {
+    .item-1 p
+    {
+      color: @b-services-text-hover-color;
+    }
+    .b-services__info--state-1
+    {
+      display: block;
+    }
+  }
+
+  &.state-2
+  {
+    .item-2 p
+    {
+      color: @b-services-text-hover-color;
+    }
+    .b-services__info--state-2
+    {
+      display: block;
+    }
+  }
+
+
+  &.state-3
+  {
+    .item-3 p
+    {
+      color: @b-services-text-hover-color;
+    }
+    .b-services__info--state-3
+    {
+      display: block;
+    }
+  }
+
+  &.state-default
+  {
+    .b-services__info--default
+    {
+      display: block;
+    }
+  }
+
+  &__icons
+  {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  &__icon
+  {
+    display: inline-block;
+    margin: 0 40px;
+    text-decoration: none;
+    .transition(opacity);
+
+    &:hover,
+    &.active {
+      .transition(all,0.15s,linear);
+
+      .b-services__icon-circle {
+        &-blue {
+          background-color: #21b2d5;
+        }
+
+        &-orange {
+          background-color: #ffa800;
+        }
+
+        &-magenta {
+          background-color: #d08bda;
+        }
+      }
+    }
+
+    &.opacity {
+      .transition(opacity);
+      opacity: 0.5;
+    }
+
+    &-circle {
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      width: 140px;
+      height: 140px;
+      border: 4px solid;
+      border-radius: 140px;
+      background-color: transparent;
+
+      &-blue
+      {
+        border-color: #21b2d5;
+
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -@icon-touragencies-lg-width/2;
+          margin-top: -@icon-touragencies-lg-height/2;
+          .sprite(@icon-touragencies-lg);
+        }
+      }
+
+      &-orange
+      {
+        border-color: #ffa800;
+
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -@icon-corporate-lg-width/2;
+          margin-top: -@icon-corporate-lg-height/2;
+          .sprite(@icon-corporate-lg);
+        }
+      }
+
+      &-magenta
+      {
+        border-color: #d08bda;
+
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-left: -@icon-operators-lg-width/2;
+          margin-top: -@icon-operators-lg-height/2;
+          .sprite(@icon-operators-lg);
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: normal;
+    font-size: 30px;
+    .ff-roboto-reg;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  &__desc
+  {
+    text-align: left;
+    .i-col-x6;
+    padding: 20px 20px 0 58px;
+    float: left;
+
+    h2
+    {
+      .ff-arial;
+      font-weight: normal;
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      line-height: 30px;
+      color: @b-services-title-color;
+    }
+
+    article
+    {
+      color: #c7cbd8;
+      margin: 0 0 23px 0;
+      &:last-child
+      {
+        margin-bottom: 0;
+      }
+    }
+
+    h3
+    {
+      .ff-roboto-reg;
+      margin: 0 0 8px 0;
+      font-size: 30px;
+
+      a
+      {
+        color: @b-services-text-normal-color;
+        .transition(color,.15s,linear);
+        text-decoration: none;
+        position: relative;
+        &:before
+        {
+          content: "";
+          .sprite(@icon-services-arrow-normal);
+          position: absolute;
+          top: 10px;
+          right: 100%;
+          margin: 0 17px 0 0;
+        }
+        &:after
+        {
+          content: "";
+          width: 100%;
+          height: 2px;
+          position: absolute;
+          left: 0;
+          top: 100%;
+          background: @b-services-text-normal-color;
+          .transition(background,.15s,linear);
+          margin: -4px 0 0 0;
+        }
+        &:hover
+        {
+          color: @b-services-text-hover-color;
+          &:before
+          {
+            .sprite(@icon-services-arrow-hover);
+          }
+          &:after
+          {
+            background: @b-services-text-hover-color;
+          }
+        }
+      }
+    }
+
+    p
+    {
+      .ff-arial;
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      .transition(color,.15s,linear);
+    }
+
+  }
+
+  &__layout
+  {
+    text-align: center;
+    position: relative;
+  }
+
+  &__info
+  {
+    color: @b-services-text-hover-color;
+    display: none;
+    margin-bottom: 40px;
+  }
+
+  .b-list
+  {
+    list-style: none;
+    .ff-arial;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    padding: 30px 60px 00;
+    text-align: left;
+    color: #c7cbd8;
+    strong
+    {
+      .ff-roboto-reg;
+      font-size: 20px;
+      display: block;
+      margin: 0 0 5px 0;
+    }
+    &__item
+    {
+      padding: 0 0 0 79px;
+      position: relative;
+      margin: 35px 0 0 0;
+      &:first-child
+      {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .b-sub-list
+  {
+    .ff-arial;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0;
+    margin: 24px 0 0 0;
+    list-style: none;
+    text-align: left;
+    
+    &__item
+    {
+      padding: 0 0 0 20px;
+      margin: 20px 0 0 0;
+      position: relative;
+      &:before
+      {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 7px;
+        width: 5px;
+        height: 5px;
+        background: #ff4f4f;
+        .border-radius(50%);
+      }
+      &:first-child
+      {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .icon-store
+  {
+    position: relative;
+    &:before
+    {
+      content: "";
+      .sprite(@icon-services-1);
+      position: absolute;
+      left: 0;
+      top: -11px;
+    }
+  }
+
+  .icon-star
+  {
+    position: relative;
+    &:before
+    {
+      content: "";
+      .sprite(@icon-services-2);
+      position: absolute;
+      left: 0;
+      top: -11px;
+    }
+  }
+
+  .icon-ticket
+  {
+    position: relative;
+    &:before
+    {
+      content: "";
+      .sprite(@icon-services-3);
+      position: absolute;
+      left: 0;
+      top: -11px;
+    }
+  }
+
+  .icon-money
+  {
+    position: relative;
+    &:before
+    {
+      content: "";
+      .sprite(@icon-services-4);
+      position: absolute;
+      left: 0;
+      top: -11px;
+    }
+  }
+
+}
+
+.b-services-base
+{
+  padding: 26px 0 0 0;
+  h3
+  {
+    margin: 0 0 24px 0;
+    .ff-roboto-reg;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  ul
+  {
+    list-style: none;
+    padding: 85px 0 0 24px;
+    margin: 0;
+    .ff-arial;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    li
+    {
+      display: inline-block;
+      vertical-align: top;
+      width: 106px;
+      text-align: center;
+      position: relative;
+      &:before
+      {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -85px;
+        margin: 0 0 0 -71px/2;
+      }
+    }
+  }
+  .icon-tours
+  {
+    &:before
+    {
+      .sprite(@icon-tours);
+    }
+  }
+  .icon-operators
+  {
+    &:before
+    {
+      .sprite(@icon-operators);
+    }
+  }
+  .icon-hotels
+  {
+    &:before
+    {
+      .sprite(@icon-hotels);
+    }
+  }
+  .icon-avia
+  {
+    &:before
+    {
+      .sprite(@icon-avia);
+    }
+  }
+}
+
+.b-services-users
+{
+  padding: 26px 0 0 0;
+
+  h3
+  {
+    margin: 0 0 13px 0;
+    .ff-roboto-reg;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  p
+  {
+    margin: 0;
+    .ff-roboto-reg;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  &__numbers
+  {
+    margin: 0 0 7px 0;
+    .num-group
+    {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 2px 0 0;
+      .group;
+    }
+    .num-val
+    {
+      float: left;
+      display: block;
+      font-size: 60px;
+      line-height: 72px;
+      .ff-roboto-reg;
+      color: #ffffff;
+      position: relative;
+      .border-radius(3px);
+      background: #21b2d5;
+      width: 53px;
+      text-align: center;
+      margin: 0 1px 0 0;
+      .box-shadow(0,1px,1px,1);
+      &:before
+      {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: rgba(24, 113, 134, 0.4);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin: -1px 0 0 0;
+      }
+      &:after
+      {
+        content: "";
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        .border-radius-custom(0,0,3px,3px);
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
