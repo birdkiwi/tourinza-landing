@@ -382,7 +382,17 @@ new WOW().init();
                 return false;
             });
 
+            $this.addClass('animated');
+            setTimeout(function(){
+                $this.removeClass('animated');
+            }, 9000);
 
+            setInterval(function(){
+                $this.addClass('animated');
+                setTimeout(function(){
+                    $this.removeClass('animated');
+                }, 3000);
+            }, 20000);
         });
 
         return $this;

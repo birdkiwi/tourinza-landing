@@ -140,10 +140,13 @@
     .animated;
     .animated-infinite;
     .bounce;
-    &:hover
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+
+    &.animated
     {
-      -webkit-animation-play-state: paused;
-      animation-play-state: paused;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
     }
   }
 
