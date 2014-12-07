@@ -1,4 +1,5 @@
-.b-login
+.b-login,
+.b-request-password
 {
   position: fixed;
   left: 0;
@@ -78,12 +79,27 @@
   {
     &__title
     {
+      position: relative;
       .ff-roboto-light;
       font-size: 30px;
       line-height: 1;
       color: #3e444b;
       margin: 0 0 17px 0;
       text-align: center;
+
+      &-back
+      {
+        position: absolute;
+        left: 20px;
+        line-height: 2;
+        .ff-roboto-light;
+        text-align: left;
+        font-size: 12px;
+        color: #3e444b;
+        &:before {
+          content: '←';
+        }
+      }
     }
     &__row
     {
@@ -154,7 +170,16 @@
     }
   }
 
-  input[type="text"]
+  p {
+    .ff-arial;
+    color: #3e444b;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"]
   {
     .ui-form-input-text(270px, 40px);
   }

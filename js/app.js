@@ -162,7 +162,7 @@ new WOW().init();
                 animationSpeed = 300,
                 clickFlag = true,
                 timer,
-                delay = 4000;
+                delay = 10000;
 
             for(var $i=0; $i < itemsVal; $i++)
             {
@@ -516,7 +516,7 @@ $(document).ready(function(){
     $('[data-login-btn]').modalLogin();
     $('[data-btn-up]').btnUp();
 
-    $('[data-show-service]').click(function(){
+    $('[data-show-service]').hoverIntent(function(){
         $('[data-show-service]').addClass('opacity');
         var serviceId = $(this).data('show-service');
 

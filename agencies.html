@@ -49,15 +49,13 @@
 
         <div class="b-slider" data-b-slider>
 
-            <div class="b-slider__apple wow fadeInUp"></div>
+            <ul class="b-slider__nav wow fadeInLeft" data-nav></ul>
 
-            <ul class="b-slider__nav wow fadeInLeftBig" data-nav>
-
-            </ul>
-
-            <div class="b-slider__container wow fadeInLeftBig" data-holder>
+            <div class="b-slider__container wow fadeIn" data-holder>
 
                 <div class="b-slider__item" data-item>
+                    <div class="b-slider__image" style="background: url('img/single/b-slider-apple.png') no-repeat 0 0;"></div>
+
                     <h2>Никаких посредников</h2>
                     <p>
                         Работа со всеми поставщиками туристических услуг в «одном окне», позволяющая эффективно экономить время и получать 100% корректную информацию напрямую от поставщика. Только вы и туроператор. Исключение ошибок и потерь времени на ввод-вывод информации и копирование данных при работе с заявками. Работа в одном окне и едином рабочем пространстве имеющем комфортную экосреду.
@@ -82,6 +80,7 @@
                 </div><!-- /.b-slider__item -->
 
                 <div class="b-slider__item" data-item>
+                    <div class="b-slider__image" style="background: url('img/single/b-slider-apple-2.png') no-repeat 0 0;"></div>
                     <h2>Один сервис для всех задач</h2>
                     <p>
                         Tourinza позволяет решать все задачи турагентства в рамках личного кабинета:
@@ -91,6 +90,7 @@
 
 
                 <div class="b-slider__item" data-item>
+                    <div class="b-slider__image" style="background: url('img/single/b-slider-apple-3.png') no-repeat 0 0;"></div>
                     <h2>Поддержка профессионалов</h2>
                     <p>
                         Круглосуточная поддержка команды лучших профессионалов турбизнеса и ведущих IT -специалистов из сферы туризма, поддержка топ-менеджмента глобальной системы бронирования Amadeus, позволяет мгновенно реагировать на любые возникающие вопросы и эффективно решать возникающие в работе турагентства задачи и быть лучшими на рынке.
@@ -458,7 +458,7 @@
 
             <h2>Ваши конкуренты не дремлют!</h2>
 
-            <div class="b-statistics__counter wow flipInX">
+            <div class="b-statistics__counter wow fadeIn">
                 <p>В системе уже работает</p>
 
                 <div class="b-statistics__numbers">
@@ -692,7 +692,7 @@
 </div><!-- /.b-page -->
 
 <footer class="b-footer">
-    <div class="b-footer__container wow zoomIn">
+    <div class="b-footer__container wow fadeIn">
 
         <div class="b-footer__stores">
             <a class="b-footer__stores_item"><img src="img/single/icon-appstore.png" alt=""/></a>
@@ -743,7 +743,7 @@
     <div class="b-login__overlay"></div>
     <div class="b-login__close" data-btn-close></div>
     <div class="b-login__modal" data-b-login-modal>
-        <form class="b-login__form" action="#">
+        <form class="b-login__form" action="#" id="login-form">
 
             <h2 class="form__title">
                 Вход в систему
@@ -752,15 +752,37 @@
             <div class="form__row">
                 <div class="form__field">
                     <label><sup>*</sup> Логин</label>
-                    <input type="text"/>
+                    <input type="text" name="login" required/>
                 </div>
                 <div class="form__field">
-                    <label><sup>*</sup> Пароль <a class="retrieve-password" href="#">Забыли пароль?</a></label>
-                    <input type="text"/>
+                    <label><sup>*</sup> Пароль <a class="retrieve-password" href="#" onclick="$('#login-form').hide(); $('#request-password-form').show(); return false;">Забыли пароль?</a></label>
+                    <input type="text" name="password" required />
                 </div>
             </div>
             <div class="form__submit">
-                <a class="form__submit-btn">Войти</a>
+                <input type="submit" value="Войти" class="form__submit-btn" />
+            </div>
+
+        </form>
+
+        <form class="b-request-password__form" action="#" id="request-password-form" style="display: none">
+
+            <h2 class="form__title">
+                <a href="#" onclick="$('#request-password-form').hide();$('#login-form').show(); return false;" class="form__title-back">
+                    Я помню пароль
+                </a>
+                Забыли пароль?
+            </h2>
+
+            <div class="form__row">
+                <p>На указанный вами email будет отправлена инструкция по восстановлению доступа к вашей учетной записи</p>
+                <div class="form__field">
+                    <label><sup>*</sup> Логин или email</label>
+                    <input type="text" name="login" required />
+                </div>
+            </div>
+            <div class="form__submit">
+                <input type="submit" value="Отправить" class="form__submit-btn" />
             </div>
 
         </form>

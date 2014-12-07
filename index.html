@@ -25,7 +25,7 @@
 
             <a href="index.html" class="b-header__logo"></a>
 
-            <a class="b-header__menu" data-b-menu-button></a>
+            <a class="b-header__menu" data-b-menu-button> Меню</a>
 
             <ul class="b-header__user-panel b-user-panel">
                 <li class="b-user-panel__item">
@@ -59,7 +59,7 @@
 
         <div class="b-services__layout">
 
-            <div class="b-services__info b-services__info--default" data-service="0">
+            <div class="b-services__info b-services__info--default group" data-service="0">
                 <article class="b-services-base i-col-x6">
                     <h3>В нашей базе сейчас:</h3>
                     <ul>
@@ -100,7 +100,7 @@
                 </article><!-- /.b-services-users -->
             </div><!-- /.b-services__info -->
 
-            <div class="b-services__info b-services__info--state-1" data-service="1">
+            <div class="b-services__info b-services__info--state-1 group" data-service="1">
 
                 <div class="b-services__desc i-col-x6">
                     <article>
@@ -131,7 +131,7 @@
 
             </div><!-- /.b-services__info -->
 
-            <div class="b-services__info b-services__info--state-2" data-service="2">
+            <div class="b-services__info b-services__info--state-2 group" data-service="2">
 
                 <div class="b-services__desc i-col-x6">
                     <article>
@@ -162,7 +162,7 @@
 
             </div><!-- /.b-services__info -->
 
-            <div class="b-services__info b-services__info--state-3" data-service="3">
+            <div class="b-services__info b-services__info--state-3 group" data-service="3">
 
                 <div class="b-services__desc i-col-x6">
                     <article>
@@ -202,13 +202,13 @@
         <div class="b-menu__wrapper-2">
             <ul class="b-list">
                 <li class="b-list__item">
-                    <a class="b-list__link" href="agencies.html">Турагентствам</a>
+                    <a class="b-list__link large" href="agencies.html">Турагентствам</a>
                 </li>
                 <li class="b-list__item">
-                    <a class="b-list__link" href="corporates.html">Корпоративным клиентам</a>
+                    <a class="b-list__link large" href="corporates.html">Корпоративным клиентам</a>
                 </li>
                 <li class="b-list__item">
-                    <a class="b-list__link" href="operators.html">Поставщикам услуг</a>
+                    <a class="b-list__link large" href="operators.html">Поставщикам услуг</a>
                 </li>
             </ul>
         </div>
@@ -222,7 +222,7 @@
     <div class="b-login__overlay"></div>
     <div class="b-login__close" data-btn-close></div>
     <div class="b-login__modal" data-b-login-modal>
-        <form class="b-login__form" action="#">
+        <form class="b-login__form" action="#" id="login-form">
 
             <h2 class="form__title">
                 Вход в систему
@@ -231,15 +231,37 @@
             <div class="form__row">
                 <div class="form__field">
                     <label><sup>*</sup> Логин</label>
-                    <input type="text"/>
+                    <input type="text" name="login" required/>
                 </div>
                 <div class="form__field">
-                    <label><sup>*</sup> Пароль <a class="retrieve-password" href="#">Забыли пароль?</a></label>
-                    <input type="text"/>
+                    <label><sup>*</sup> Пароль <a class="retrieve-password" href="#" onclick="$('#login-form').hide(); $('#request-password-form').show(); return false;">Забыли пароль?</a></label>
+                    <input type="text" name="password" required />
                 </div>
             </div>
             <div class="form__submit">
-                <a class="form__submit-btn">Войти</a>
+                <input type="submit" value="Войти" class="form__submit-btn" />
+            </div>
+
+        </form>
+
+        <form class="b-request-password__form" action="#" id="request-password-form" style="display: none">
+
+            <h2 class="form__title">
+                <a href="#" onclick="$('#request-password-form').hide();$('#login-form').show(); return false;" class="form__title-back">
+                    Я помню пароль
+                </a>
+                Забыли пароль?
+            </h2>
+
+            <div class="form__row">
+                <p>На указанный вами email будет отправлена инструкция по восстановлению доступа к вашей учетной записи</p>
+                <div class="form__field">
+                    <label><sup>*</sup> Логин или email</label>
+                    <input type="text" name="login" required />
+                </div>
+            </div>
+            <div class="form__submit">
+                <input type="submit" value="Отправить" class="form__submit-btn" />
             </div>
 
         </form>
