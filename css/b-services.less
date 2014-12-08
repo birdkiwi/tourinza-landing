@@ -255,11 +255,72 @@
     position: relative;
   }
 
+  &__small_layout
+  {
+    display: none;
+    margin: 0 auto;
+
+    &_item
+    {
+      margin-right: 30px;
+      float: left;
+      color: #cecece;
+      font-size: 12px;
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: -14px;
+        background: #cecece;
+      }
+
+      &.blue {
+        &:before {
+          background-color: #38bad9;
+        }
+      }
+      &.orange {
+        &:before {
+          background-color: #ffa800;
+        }
+      }
+      &.purple {
+        &:before {
+          background-color: #d08bda;
+        }
+      }
+
+      &_title
+      {
+        font-size: 20px;
+        font-weight: normal;
+        margin-bottom: 10px;
+        margin-top: 0;
+      }
+    }
+  }
+
   &__info
   {
     color: @b-services-text-hover-color;
     display: none;
     margin-bottom: 40px;
+  }
+
+  &__smallinfo
+  {
+    display: none;
+    width: 780px;
+    margin: 0 auto;
+
+    &--state-default {
+      display: block;
+      width: auto;
+    }
   }
 
   .b-list
@@ -330,10 +391,28 @@
     &:before
     {
       content: "";
-      .sprite(@icon-services-1);
       position: absolute;
       left: 0;
       top: -11px;
+      background-repeat: none;
+    }
+
+    &-blue {
+      &:before {
+        .sprite(@icon-services-store-blue);
+      }
+    }
+
+    &-orange {
+      &:before {
+        .sprite(@icon-services-store-orange);
+      }
+    }
+
+    &-purple {
+      &:before {
+        .sprite(@icon-services-store-purple);
+      }
     }
   }
 
@@ -343,10 +422,28 @@
     &:before
     {
       content: "";
-      .sprite(@icon-services-2);
       position: absolute;
       left: 0;
       top: -11px;
+      background-repeat: none;
+    }
+
+    &-blue {
+      &:before {
+        .sprite(@icon-services-star-blue);
+      }
+    }
+
+    &-orange {
+      &:before {
+        .sprite(@icon-services-star-orange);
+      }
+    }
+
+    &-purple {
+      &:before {
+        .sprite(@icon-services-star-purple);
+      }
     }
   }
 
@@ -356,10 +453,28 @@
     &:before
     {
       content: "";
-      .sprite(@icon-services-3);
       position: absolute;
       left: 0;
       top: -11px;
+      background-repeat: none;
+    }
+
+    &-blue {
+      &:before {
+        .sprite(@icon-services-ticket-blue);
+      }
+    }
+
+    &-orange {
+      &:before {
+        .sprite(@icon-services-ticket-orange);
+      }
+    }
+
+    &-purple {
+      &:before {
+        .sprite(@icon-services-ticket-purple);
+      }
     }
   }
 
@@ -369,7 +484,7 @@
     &:before
     {
       content: "";
-      .sprite(@icon-services-4);
+      .sprite(@icon-services-money-purple);
       position: absolute;
       left: 0;
       top: -11px;
@@ -512,5 +627,20 @@
         background: rgba(255, 255, 255, 0.3);
       }
     }
+  }
+}
+
+@media screen and ( max-height: 800px ){
+  .b-services__layout
+  {
+    display: none;
+  }
+  .b-services__small_layout
+  {
+    display: block;
+  }
+  .b-services__icons
+  {
+    padding-bottom: 25px;
   }
 }

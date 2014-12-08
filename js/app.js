@@ -299,14 +299,17 @@ new WOW().init();
 
             $btnShowModal.click(function(){
                 $modal.fadeIn(300);
+                $btnShowModal.fadeOut(300);
                 return false;
             });
 
             $btnCloseModal.click(function(){
+                $btnShowModal.fadeIn(300);
                 $modal.fadeOut(300);
             });
 
             $links.click(function() {
+                $btnShowModal.fadeIn(300);
                 $modal.fadeOut(300);
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
@@ -406,8 +409,8 @@ new WOW().init();
         $this.each(function(){
 
             var $this = $(this),
-                classState1 = 'p-reg--step-1',
-                classState2 = 'p-reg--step-2',
+                //classState1 = 'p-reg--step-1',
+                //classState2 = 'p-reg--step-2',
                 $startList = $this.find('[data-start-options]'),
                 $startOptions = $startList.find('[data-form]'),
                 $activeList = $this.find('[data-form-options]'),
@@ -419,7 +422,34 @@ new WOW().init();
 
             $startOptions.click(function(){
                 var formActive = $(this).data('form');
-                $this.removeClass(classState1).addClass(classState2);
+                $('.b-reg-start h2, .b-reg-start p').animate({
+                    opacity: 0
+                }, 100, function(){
+                    $('.b-reg-start').animate({
+                        top: "10%",
+                        opacity: 0
+                    }, 500, function(){
+                        $('.b-reg-start').css({
+                            display: "none"
+                        })
+                    });
+
+                    $('.b-header__reg-list').css({
+                        opacity: 0,
+                        display: "block"
+                    }).animate({
+                        opacity: 1
+                    }, 500);
+
+                    $('.b-reg-forms').css({
+                        opacity: 0,
+                        display: "block"
+                    }).animate({
+                        opacity: 1
+                    }, 500);
+                });
+                //$this.removeClass(classState1).addClass(classState2);
+                $(this).parents('li').removeClass('active');
                 $activeList.parents('li').removeClass('active');
                 $activeOptions.filter('[data-form="' + formActive + '"]').parents('li').addClass('active');
                 $forms.hide();
@@ -469,8 +499,8 @@ new WOW().init();
 
 (function( $ ) {
     $.fn.btnUp = function() {
-
-        var $btn = $('<a class="btn-up"></a>');
+        var $btnLanguage = $(this).data('btn-up');
+        var $btn = $('<a class="btn-up btn-up-' + $btnLanguage + '"></a>');
         $('body').append($btn);
         $btn.click(function(){
             $('html,body').animate({
@@ -516,7 +546,13 @@ $(document).ready(function(){
     $('[data-login-btn]').modalLogin();
     $('[data-btn-up]').btnUp();
 
-    $('[data-show-service]').hoverIntent(function(){
+    var hoverIntentOpts = {
+        over: showServices, // function = onMouseOver callback (REQUIRED)
+        timeout: 0, // number = milliseconds delay before onMouseOut
+        out: hideServices // function = onMouseOut callback (REQUIRED)
+    };
+
+    function showServices() {
         $('[data-show-service]').addClass('opacity');
         var serviceId = $(this).data('show-service');
 
@@ -529,6 +565,14 @@ $(document).ready(function(){
             $('[data-service="' + serviceId + '"]').show();
             return false;
         }
-    });
+    }
+
+    function hideServices() {
+        $('[data-show-service]').removeClass('active current opacity');
+        $('[data-service]').hide();
+        $('[data-service="0"]').show();
+    }
+
+    $('[data-show-service]').hoverIntent(hoverIntentOpts);
 });
 
