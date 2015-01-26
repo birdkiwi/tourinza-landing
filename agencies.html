@@ -522,32 +522,42 @@
 
             <h2>Есть вопросы? Напишите нам!</h2>
 
-            <form class="b-feedback__form" action="#">
+            <form class="b-feedback__form" action="test/test.json" method="POST" data-form-validate data-ajax-form-success-block=".b-feedback__container_success" data-ajax-form data-ajax-form-error-msg="Произошла ошибка, пожалуйста, попробуйте снова или позвоните нам!">
 
                 <div class="form__row">
                     <div class="form__field">
-                        <input type="text" placeholder="Ваше имя"/>
+                        <input type="text" name="name" placeholder="Ваше имя" required />
                     </div>
                     <div class="form__field">
-                        <input type="text" placeholder="Телефон"/>
+                        <input type="text" name="phone" placeholder="Телефон" required />
                     </div>
                     <div class="form__field">
-                        <input type="text" placeholder="E-mail"/>
+                        <input type="email" name="email" placeholder="E-mail" required />
                     </div>
                 </div>
 
                 <div class="form__row">
                     <div class="form__field">
-                        <textarea cols="30" rows="10" placeholder="Ваш вопрос.."></textarea>
+                        <textarea cols="30" rows="10" name="question" placeholder="Ваш вопрос.." required></textarea>
                     </div>
                 </div>
 
                 <div class="form__row wow bounceIn">
-                    <a class="form__submit">Задать вопрос</a>
+                    <input type="submit" class="form__submit" value="Задать вопрос" />
                 </div>
 
             </form>
 
+        </div><!-- /.b-feedback__container -->
+        <div class="b-feedback__container_success">
+            <h2>Благодарим вас</h2>
+
+            <p class="b-feedback__container_success_message">
+                Ваше сообщение было успешно отправлено. <br/>
+                Мы свяжемся с вами в ближайшее время.
+            </p>
+
+            <a href="#" class="form__submit" data-ajax-form-success-block-ok=".b-feedback__container">OK</a>
         </div><!-- /.b-feedback__container -->
     </div><!-- /.b-feedback -->
 

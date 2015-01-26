@@ -33,6 +33,7 @@ module.exports = function(grunt) {
                     'js/jquery.js',
                     'js/wow.js',
                     'js/hoverintent.js',
+                    'js/jquery.validate.min.js',
                     'js/app.js'
                 ],
                 dest: 'js/build/production.js'
@@ -58,7 +59,7 @@ module.exports = function(grunt) {
         watch: {
             scripts: {
                 files: ['js/*.js', 'img/spriteTo/*', 'css/*.less'],
-                tasks: ['less', 'cssmin', 'concat', 'uglify', 'sprite'],
+                tasks: ['cssmin', 'concat', 'uglify', 'sprite', 'less'],
                 options: {
                     livereload: true,
                     spawn: false

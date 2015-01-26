@@ -1188,12 +1188,28 @@
 {
   background: #353a47;
   text-align: center;
+  position: relative;
 
   &__container
   {
     .i-container;
     height: 500px;
     color: #ffffff;
+
+    &_success {
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      opacity: 0;
+
+      &_message {
+        color: #fff;
+        font-size: 18px;
+        line-height: 22px;
+        padding-top: 10px;
+        padding-bottom: 60px;
+      }
+    }
   }
 
   h2
@@ -1203,9 +1219,11 @@
     font-size: 40px;
     line-height: 1;
     padding: 45px 0 65px;
+    color: #fff;
   }
 
-  input[type="text"]
+  input[type="text"],
+  input[type="email"]
   {
     .ui-input-text(219px,50px);
     text-align: left;
@@ -1215,6 +1233,17 @@
   {
     .ui-textarea(699px,120px);
     text-align: left;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    border: 1px solid #fff;
+
+    &.error {
+      border: 1px solid #ffd4d4;
+      background: #ffd4d4;
+    }
   }
   
   .form__row
